@@ -77,7 +77,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      7 min read
     
 </span></p>
 
@@ -122,11 +122,17 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Prerequisities">Prerequisities </a></li>
 <li class="toc-entry toc-h1"><a href="#Numpy">Numpy </a></li>
 <li class="toc-entry toc-h1"><a href="#MNIST-dataset">MNIST dataset </a></li>
-<li class="toc-entry toc-h1"><a href="#How-it-looks-like?">How it looks like? </a></li>
-<li class="toc-entry toc-h1"><a href="#Pytorch-example">Pytorch example </a></li>
+<li class="toc-entry toc-h1"><a href="#How-it-looks-like?">How it looks like? </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Pytorch-example">Pytorch example </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#First-steps">First steps </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Linear-Layer">Linear Layer </a></li>
+<li class="toc-entry toc-h2"><a href="#Linear-Layer-(architecture)">Linear Layer (architecture) </a></li>
+<li class="toc-entry toc-h2"><a href="#Activation-function-(architecture)">Activation function (architecture) </a></li>
+<li class="toc-entry toc-h2"><a href="#Loss-function">Loss function </a></li>
+<li class="toc-entry toc-h2"><a href="#Backpropagation">Backpropagation </a></li>
 </ul>
 </li>
 </ul><!--
@@ -175,8 +181,40 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
 
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">trange</span>
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">trange</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -408,9 +446,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pytorch-example">
+<h2 id="Pytorch-example">
 <a class="anchor" href="#Pytorch-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pytorch example<a class="anchor-link" href="#Pytorch-example"> </a>
-</h1>
+</h2>
 </div>
 </div>
 </div>
@@ -432,7 +470,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#hide-output</span>
+<span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 
@@ -483,20 +522,6 @@ window.onload = wrap_img;
 </div>
 
     </details>
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Loss: 0.02227; Acc: 0.99219: 100%|██████████| 10000/10000 [00:47&lt;00:00, 210.04it/s]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -514,9 +539,377 @@ window.onload = wrap_img;
 <h1 id="First-steps">
 <a class="anchor" href="#First-steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>First steps<a class="anchor-link" href="#First-steps"> </a>
 </h1>
-<h2 id="Linear-Layer">
-<a class="anchor" href="#Linear-Layer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Layer<a class="anchor-link" href="#Linear-Layer"> </a>
+<h2 id="Linear-Layer-(architecture)">
+<a class="anchor" href="#Linear-Layer-(architecture)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Layer (architecture)<a class="anchor-link" href="#Linear-Layer-(architecture)"> </a>
 </h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our input is goint to have 784 lenght as array (vector). That mean our weights need to have 784 rows and X columns. We're going to have two layers with size 128 so we need to initate matrix with shape (784, 128) and second with shape (128, 128). To create it we need to initiate some random numbers in those shapes.</p>
+<p>Every neural network frameworks use own initiate functions that create usually number between -1 to 1 or 0 to 1. I chose uniform function, because it performed best from what I have observed.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">_uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we can create our first layers</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="n">_uniform</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span> <span class="c1"># layer one (weights)</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">_uniform</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># layer two (weights)</span>
+
+<span class="n">l1</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(784, 128)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To perform our linear pass we take one image from training set and use "dot" product from numpy. It multiply rows of image with columns of l1.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">img</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x_l1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="n">x_l1</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(128,)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Full pass:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_l1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="n">x_l2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+<span class="n">x_l2</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(10,)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Activation-function-(architecture)">
+<a class="anchor" href="#Activation-function-(architecture)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Activation function (architecture)<a class="anchor-link" href="#Activation-function-(architecture)"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What are they? They are non-linear function. We use them to have non-linear outputs. Imagine your input data is sinus. If our architecture would be only from linear function it couldn't learn how to "bend" ouput to something similiar to sinus. We use only one after first layer. It is called ReLU and it is most used right now. It is defined as <code>if input &lt; 0 than 0 else input</code> and to implement it is really easy:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Implementation with our code:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_l1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="n">x_relu</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">x_l1</span><span class="p">)</span>
+<span class="n">x_l2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's it. We have implemented forward pass for our neural network so far. After we pass image we get output of size 10. But the real question is how it will learn?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Loss-function">
+<a class="anchor" href="#Loss-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loss function<a class="anchor-link" href="#Loss-function"> </a>
+</h2>
+<p>To teach neural network we have to figured how to represented how big is "error" between prediction and label.</p>
+<p>We can represent label as one-hot encoded array; so if it is number 6 it create array (10,) of zeros and place number 6 on its position as 1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">select</span> <span class="o">=</span> <span class="mi">1337</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">Y_train</span><span class="p">[</span><span class="n">select</span><span class="p">]</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="n">select</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Represent label as one-hot encoded array</span>
+<span class="n">label_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">label_arr</span><span class="p">[</span><span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># Forward pass</span>
+<span class="n">x_l1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+<span class="n">x_relu</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">x_l1</span><span class="p">)</span>
+<span class="n">x_l2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>  <span class="c1"># output</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x_l2</span><span class="p">)</span> <span class="c1"># Take biggest number in array (by position)</span>
+
+<span class="c1"># Differences</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Correct number: </span><span class="si">{</span><span class="n">label_arr</span><span class="si">}</span><span class="s2"> ----&gt; </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Prediction: </span><span class="si">{</span><span class="n">x_l2</span><span class="si">}</span><span class="s2"> ----&gt; </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Correct number: [0. 0. 0. 0. 0. 0. 1. 0. 0. 0.] ----&gt; 6
+Prediction: [ 0.03657699 -0.36268732 -0.77278286 -0.24358763 -1.491132   -0.43864995
+ -0.22102316 -0.08220471 -0.7984194  -0.87615156] ----&gt; 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see its prediction is wrong. We can calculate error simply like <code>label_arr - x_l2</code>, but because our classes (targets/labels) are mutually exclusive we will use specialised function for classification called LogSoftmax. With that our differences are "maginified". Here is implementation in a code:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">logsumexp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">c</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">c</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">x_lsm</span> <span class="o">=</span> <span class="n">x_l2</span> <span class="o">-</span> <span class="n">logsumexp</span><span class="p">(</span><span class="n">x_l2</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">x_lsm</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[-1.8256134, -2.2248776, -2.6349733, -2.105778 , -3.3533225,
+        -2.3008404, -2.0832136, -1.9443951, -2.6606097, -2.7383418]],
+      dtype=float32)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have our loss function, but won't be implementing in forward pass. We use loss function to update our parameters, which are <code>l1</code> and <code>l2</code> so we are going to implement backward pass.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Backpropagation">
+<a class="anchor" href="#Backpropagation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backpropagation<a class="anchor-link" href="#Backpropagation"> </a>
+</h2>
+<p>The fundamental question is <code>How do you meaningfully update parameters?</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sources from which I was inspired to write this:</p>
+<ul>
+<li><a href="https://developer.ibm.com/technologies/artificial-intelligence/articles/neural-networks-from-scratch/">https://developer.ibm.com/technologies/artificial-intelligence/articles/neural-networks-from-scratch/</a></li>
+<li><a href="https://www.youtube.com/watch?v=JRlyw6LO5qo">https://www.youtube.com/watch?v=JRlyw6LO5qo</a></li>
+<li><a href="https://www.fast.ai">https://www.fast.ai</a></li>
+</ul>
+
 </div>
 </div>
 </div>
