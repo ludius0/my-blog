@@ -77,7 +77,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      17 min read
     
 </span></p>
 
@@ -200,8 +200,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Neural networks use tensor for passing multiple data through network. In python we don't have tensors, but those can be represented with <a href="https://numpy.org/">numpy library</a>. It provide n-dimensional arrays, faster computing, cleaner code, a few functions we're gonna use and it is commonly used for data science. If you're not familiar with numpy, you can check this <a href="https://www.youtube.com/watch?v=ZB7BZMhfPgk">video</a> to learn about it. Numpy is there explained in detailes.</p>
-<p>Numpy arrays can be also plot with its parent library called matplotlib:</p>
+<p>Neural networks use <strong>tensor</strong> for passing multiple data through network. In python we don't have <strong>tensors</strong>, but those can be represented with <a href="https://numpy.org/">numpy library</a>. It provide n-dimensional arrays, faster computing, cleaner code, a few functions we're gonna use and it is commonly used for data science. If you're not familiar with numpy, you can check this <a href="https://www.youtube.com/watch?v=ZB7BZMhfPgk">video</a> to learn about it. Numpy is there explained in detailes. But only two points to numpy:</p>
+<p>Numpy arrays can be also plot with its parent library called <strong>matplotlib</strong>:</p>
 
 </div>
 </div>
@@ -244,7 +244,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We'll use special operation called <code>np.dot</code>, which multiply two arrays by taking rows of first array and columns of second array. If our array doesn't match needed shape we can flip it with <code>.T</code> operation.</p>
+<p>and we'll use special operation called <code>np.dot</code>, which multiply two arrays by taking rows of first array and columns of second array. If our array doesn't match needed shape we can flip it with <code>.T</code> operation.</p>
 
 </div>
 </div>
@@ -273,10 +273,10 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[-0.5081598 ,  0.29138089,  0.67837477,  0.19979245],
-       [-0.27515243,  0.77095284, -0.42650189,  1.28282271],
-       [-0.49381512,  0.70157455,  0.11754107,  0.9956999 ],
-       [ 0.52683367, -0.33922572, -0.65522606, -0.27827649]])</pre>
+<pre>array([[ 0.37721915, -0.42642857, -0.84477323,  0.84687206],
+       [ 0.43091005, -0.42749142, -0.47711933,  0.6328294 ],
+       [-0.24269619,  0.20498512, -0.02406563, -0.1556368 ],
+       [ 0.36887996, -0.26259721,  0.43719349, -0.03817243]])</pre>
 </div>
 
 </div>
@@ -306,6 +306,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">gzip</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">hashlib</span>
+<span class="c1"># source: http://yann.lecun.com/exdb/mnist/</span>
 
 <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="n">filename</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -341,7 +342,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>MNIST dataset is made from <code>70000 images</code>. It is split in two types: <code>training (60k)</code> &amp; <code>testing (10k)</code> data. Each image has 28 to 28 pixels and has own label, which describe it.</p>
+<p><strong>MNIST dataset</strong> is made from <code>70000 images</code>. It is split in two types: <code>training (60k)</code> &amp; <code>testing (10k)</code> data. Each image has 28 to 28 pixels and own label, which describe it.</p>
 
 </div>
 </div>
@@ -394,7 +395,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The reason we have split dataset is for validating how (if even) our model function properly. Because how the neural network is created we need to transform this image to numpy 1D array (vector) (we need to flatten it), which give us array with shape (1, 784).</p>
+<p>The reason we have a splited dataset is for validating how (if even) our network function properly. Because how the neural network is created we need to transform this image to numpy 1D array (vector) (we need to flatten it), which give us array with shape (1, 784).</p>
 
 </div>
 </div>
@@ -448,7 +449,7 @@ window.onload = wrap_img;
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>Well technically it’s not 1D array, because we will be passing many images at once; else it would be shape (784,).
+    <strong>Note: </strong>Well technically as 1D array it would be shape (784,), but for this example I wouldn’t be able to plot it and later we will be passing many images at once, so for clarity further code is written as shape (1, 784).
 </div>
 
 </div>
@@ -499,8 +500,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is how Neural Network (NN) looks like! Our inputs are MNIST images in the form of numpy 2D array (matrix) and which contains numbers between <code>0 to 1</code>. Usually we represent data between <code>0 to 1</code> or <code>-1 to 1</code>; It is unwritten golden rule. Architecture (model) is basically our neural network. There we pass inputs through nodes (neurons), which contains weights and those are represented as parameters and we get predictions. We than take labels, which are representing our targets and compare them with our prediction. We measure how wrong our model was with loss function and use it to update parameters so it could "learn".</p>
-<p>Maybe now is good question "what is even neural network?". It is inspired from neurons in our brain. Neuron "fire" signal if it get certain amount of input and millions of them can create complex structures. For our case we won't need millions of them, but only a few. Right now there are three types of structure in the field: linear, convolutional and reccurent. We use simplest and oldest one -&gt; the linear layer:</p>
+<p>This is how <strong>Neural Network (NN)</strong> looks like! Our inputs are MNIST images in the form of numpy 2D array (matrix) and which contains numbers between <code>0 to 1</code>. Usually we represent data between <code>0 to 1</code> or <code>-1 to 1</code>; It is unwritten golden rule. <strong>Architecture (model)</strong> is basically our neural network. There we pass inputs through <strong>nodes (neurons)</strong>, which compute some operations with <strong>parameters</strong> and we get <strong>predictions</strong>. We than take <strong>labels (targets)</strong> and compare them with our prediction. We measure how wrong our model was with <strong>loss function</strong> and use it to <strong>update</strong> <strong>parameters</strong> so it could "learn".</p>
+<p>Maybe now is good question <code>what is even neural network?</code>. It is inspired from neurons in our brain. Neuron "fire" signal if it get certain amount of input and millions of them can create complex structures. For our case we won't need millions of them, but only a few. Right now there are three types of structure in the field: <strong>linear, convolutional and reccurent</strong>. We are going to use simplest and oldest one the <strong>linear layer</strong>:</p>
+<p><code>outputs = weights * inputs + biases</code></p>
 
 </div>
 </div>
@@ -508,17 +510,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>
-$$outputs  =  weights  *  inputs  +  biases$$
-</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see it is linear function. In our model we won't use biases, so weights are only parameters we will be updating in training loop.</p>
+<p>As we can see it is a <strong>linear function</strong>. In our <strong>model</strong> we won't use <strong>biases</strong>, so <strong>weights</strong> are only <strong>parameters</strong> we will be <strong>updating in training loop</strong>.</p>
 
 </div>
 </div>
@@ -529,7 +521,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>With this our model will be learning on it’s own and when our programming function is creating own function, we call it machine learning.
+    <strong>Note: </strong>With this our model will be learning on it’s own and when our programming function is creating own function, we call it <strong>machine learning</strong>.
 </div>
 
 </div>
@@ -539,7 +531,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So far so good, but to clarify, <strong>every node (neuron) will be linear function and we stack them as full layer and pass every input to every node in the layer (to imitate complex structures)and each node will have own weight as parameter. We also stack layers and "connect" them together by weights.</strong></p>
-<p>This image roughly show how neural network looks like. Here it is defined with: input layer <em>(16 nodes)</em>, hidden layer 1 <em>(12 nodes)</em>, hidden layer 2 <em>(12 nodes)</em>, output layer <em>(1 node)</em>.</p>
+<p>This image (below) roughly show how neural network looks like. Here it is defined with: <em>input layer (16 nodes), hidden layer 1 (12 nodes), hidden layer 2 (12 nodes), output layer (1 node)</em>.</p>
 
 </div>
 </div>
@@ -578,7 +570,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Each of those "strings" are weights and we can see that every node has own weight for every node from previous layer. We will create only one hidden layer with 128 nodes. Our input layer is flatten , where each pixel is represented as one node in the input layer. Last layer is output layer and because we classify 0-9 images it will have 10 nodes.</p>
+<p>Each of those "strings" are <strong>weights</strong> and we can see that every <strong>node</strong> has own <strong>weight</strong> for every <strong>node</strong> from previous <strong>layer</strong>. We will create only one <strong>hidden layer</strong> with 128 nodes. Our input layer is <em>flatten</em>, where each pixel is represented as <em>one node</em> in the <strong>input layer</strong>. Last layer is <strong>output layer</strong> and because we classify 0-9 images it will have 10 nodes.</p>
 
 </div>
 </div>
@@ -589,7 +581,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>When neural network has more hidden layers we than call it deep learning (which is subset field of machine learning).
+    <strong>Note: </strong>When neural network has more hidden layers we than call it <strong>deep learning</strong> (which is subset field of machine learning).
 </div>
 
 </div>
@@ -702,8 +694,8 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <h2 id="Parameters-(Weights)">
 <a class="anchor" href="#Parameters-(Weights)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters (Weights)<a class="anchor-link" href="#Parameters-(Weights)"> </a>
 </h2>
-<p>We're going to have three layers: input layer (784 nodes), hidden layer (128 nodes), output layer (10 nodes). To connect them we're gonna use parameters. Because we are going to use linear layer our only parameters are <strong>weights</strong>. We will use them only for multiplaying them with the input (as showed early), but first we need initiate them.</p>
-<p>Every neural network library use own initiate functions that create usually numbers between -1 to 1 or 0 to 1. I chose <code>uniform function</code>, because it performed best from what I have observed.</p>
+<p>We're going to have three layers: <em>input layer (784 nodes), hidden layer (128 nodes), output layer (10 nodes)</em>. To connect them we're gonna use <strong>parameters</strong>. Because we are going to use <strong>linear layer</strong> our only <strong>parameters</strong> are <strong>weights</strong>. We will use them only for multiplying them with the inputs (as showed early), but first we need initiate them.</p>
+<p><em>Every</em> neural network library use own initiate functions that create usually numbers between <code>-1 to 1</code> or <code>0 to 1</code>. I chose <code>uniform function</code>, because it performed best from what I have observed.</p>
 
 </div>
 </div>
@@ -732,7 +724,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>We’re going to use "np.float32" for accuracy. All popular neural network libraries use them by default.
+    <strong>Note: </strong>We’re going to use <code>np.float32</code> for accuracy. <em>All</em> popular neural network libraries use them by default.
 </div>
 
 </div>
@@ -776,7 +768,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Despite that we have three layers, we neeed only two "layers of weights" to connect them together. It is because we don't need to update inputs (as parameters).</p>
+<p>Despite that we have three layers, we neeed only two "layers of weights" to connect them together. It is because we don't need to <strong>update</strong> inputs (as parameters).</p>
 
 </div>
 </div>
@@ -793,7 +785,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We are representing linear layers as inputs multiply by weights. To perform our linear pass we take one image from training set and use <code>np.dot</code> with our first parameter <code>l1</code>.</p>
+<p>We are representing <strong>linear layers</strong> as inputs multiply by <strong>weights</strong>. To perform our linear pass we take one image from training set and use <code>np.dot</code> with our first parameter <code>l1</code>.</p>
 
 </div>
 </div>
@@ -870,7 +862,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With linear layers we use activation function. So what are they? They are non-linear function. We use them to have non-linear outputs. Imagine your input data are for example sinus. If our architecture would be only made by linear function it couldn't learn how to "bend" output to something similiar to sinus.</p>
+<p>With linear layers we use <strong>activation function</strong>. They are <strong>non-linear function</strong>. We use them to have non-linear outputs. Imagine your input data are for example sinus. If our architecture would be only made by <strong>linear function (linear layers)</strong> it couldn't learn how to "bend" output to something similiar to sinus.</p>
 
 </div>
 </div>
@@ -901,7 +893,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We use only one after first layer (hidden layer 1). Because we only classify they are not neccesity, but we still get better performance. We implement ReLU (Rectified linear unit), which is most used. ReLU is defined as <code>if input &lt; 0 than 0 else input</code> and to implement it is really easy:</p>
+<p>We use after <strong>hidden layer</strong>. Because we only classify they are not neccesity, but we still get better performance. We implement <strong>ReLU (Rectified linear unit)</strong>, which is most used. <strong>ReLU</strong> is defined as <code>if input &lt; 0 than 0 else input</code> and to implement it is really easy:</p>
 
 </div>
 </div>
@@ -1004,7 +996,7 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's it. We have forward pass for our neural network. After we pass image we get output of size 10. But the real question is how it will learn?</p>
+<p>That's it. We have forward pass for our neural network. After we pass image we get output of <em>size 10</em>. But the real question is <code>how it will learn?</code>.</p>
 
 </div>
 </div>
@@ -1015,8 +1007,9 @@ $$outputs  =  weights  *  inputs  +  biases$$
 <h2 id="Loss-function">
 <a class="anchor" href="#Loss-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loss function<a class="anchor-link" href="#Loss-function"> </a>
 </h2>
-<p>To teach neural network we have to figured how to represented how big is <code>error</code> (difference) between <code>prediction</code> and <code>label</code>.</p>
-<p>We can represent label as <code>one-hot encoded array</code>; so if it is number 6 it create array (10,) of zeros and place one on its 6 position.</p>
+<p>To teach neural network we have to figured how to represented how big is <strong>error (difference)</strong> between <strong>prediction</strong> and 
+<strong>label</strong>.</p>
+<p>We can represent label as <code>one-hot encoded array</code>; so if it's number 6 it create array (10,) of zeros and place number one on its 6 position.</p>
 
 </div>
 </div>
@@ -1074,7 +1067,7 @@ Prediction: [[-0.2695043  -0.08346304  1.1868436  -0.2794143  -0.48525703  0.654
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see its prediction is wrong. We can calculate error simply like <code>target - output</code>, but because our classes (targets/labels) are mutually exclusive we will use specialised function for classification called LogSoftmax. With that our differences are "maginified". Here is implementation in a code:</p>
+<p>We can see its <strong>prediction</strong> is wrong. We can calculate <strong>error</strong> simply like <code>target - output</code>, but because our <strong>classes (targets/labels)</strong> are mutually exclusive we will use specialised function for classification called <strong>LogSoftmax</strong>. With that our differences are "maginified". Here is implementation in a code:</p>
 
 </div>
 </div>
@@ -1120,7 +1113,7 @@ Prediction: [[-0.2695043  -0.08346304  1.1868436  -0.2794143  -0.48525703  0.654
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We have our loss function, but we won't be implementing in forward pass. We use loss function to update our parameters, which are <code>l1</code> and <code>l2</code> so we are going to implement backward pass.</p>
+<p>We have our <strong>loss function</strong>, but we won't be implementing in forward pass. We use <strong>loss function</strong> to <strong>update</strong> our <strong>parameters</strong>, which are <code>l1</code> and <code>l2</code> so we are going to implement backward pass.</p>
 
 </div>
 </div>
@@ -1131,8 +1124,8 @@ Prediction: [[-0.2695043  -0.08346304  1.1868436  -0.2794143  -0.48525703  0.654
 <h2 id="Backpropagation">
 <a class="anchor" href="#Backpropagation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backpropagation<a class="anchor-link" href="#Backpropagation"> </a>
 </h2>
-<p>The fundamental question is <code>How do you meaningfully update parameters?</code>. Answer is we use derivatives of functions we implemented in architecture. Derivatives are representing slope of original function. All those results from each layers give us multidimensional representation called gradiant descent. We calculate them to find how much we need to increase or decrease parameter, so we would decrease a loss and update parameters. This part is conceptually hardest one to understand.</p>
-<p>Let's say we have only one simple hidden layer with a loss function and we get this:</p>
+<p>The fundamental question is <code>How do you meaningfully update parameters?</code>. Answer is we use <strong>derivatives</strong> of functions we implemented in <strong>architecture (model)</strong>. <strong>Derivatives</strong> are representing <code>slope</code> of original function. All those results from each layers give us <em>multidimensional representation</em> called <strong>gradiant descent</strong>. We calculate them to find how much we need to increase or decrease parameter, so we would decrease a <strong>loss</strong> and <strong>update parameters</strong>. This part is conceptually hardest one to understand.</p>
+<p>Let's say we have only one small linear <strong>hidden layer</strong> with a <strong>loss function</strong> and we get this:</p>
 
 </div>
 </div>
@@ -1163,8 +1156,8 @@ Prediction: [[-0.2695043  -0.08346304  1.1868436  -0.2794143  -0.48525703  0.654
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Our goal is to update parameters to decrease a loss, which represent "how wrong model was" so it would be next time more accurate. If we calculate derivative we can get something like in graph above (probably with more dimensions).
-Let's take that red dot as one of the weights (parameters) and calculate derivative of loss with respect to the parameters and we get something that can represented like this:</p>
+<p>Our goal is to <strong>update parameters</strong> to decrease a <strong>loss</strong>, which represent <em>how wrong model was</em> so it would be next time more accurate. If we calculate <strong>derivative</strong> we can get something like in graph above (probably with more dimensions).
+Let's take that red dot as one of the <strong>weights (parameters)</strong> and calculate <strong>derivative of loss with respect to the parameters</strong> and we get something that can represented like this:</p>
 
 </div>
 </div>
@@ -1195,9 +1188,9 @@ Let's take that red dot as one of the weights (parameters) and calculate derivat
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we know the slope, it just need some push to the right and for that we use use learning rate and optimizer later.</p>
-<p>We are interest only in the three types of derivatives function. Those are: Linear, ReLU and LogSoftmax. Also we will need fot LogSoftmax derivative of one-hot encoded label (target), so how do we even compute derivatives?</p>
-<p>Remember that derivatives are just slopes. If we take for example linear function like this one:</p>
+<p>Now we know the <strong>slope</strong>, it just need some push to the right and for that we use use <strong>learning rate</strong> and <strong>optimizer</strong> later.</p>
+<p>We are interest only in the three types of derivatives function. Those are: <strong>Linear, ReLU and LogSoftmax</strong>. Also we will need for <strong>LogSoftmax</strong> a <strong>derivative one-hot encoded label (target)</strong>, so how do we even compute <strong>derivatives</strong>?</p>
+<p>Remember that derivatives are just <strong>slopes</strong>. If we take for example linear function like this one:</p>
 
 </div>
 </div>
@@ -1246,7 +1239,7 @@ Let's take that red dot as one of the weights (parameters) and calculate derivat
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To get slope we take some two coordinations on the line like (x=-2, y=2.5) and (x=-4, y=5) and calculate it:</p>
+<p>To get slope we take some two coordinations on the line like <code>(x=-2, y=2.5)</code> and <code>(x=-4, y=5)</code> and calculate it:</p>
 
 </div>
 </div>
@@ -1305,8 +1298,8 @@ $$slope = -1.25$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Result is -1.25; that mean if we take some x coordination like for example x2 and multiply it with the slope; we get y2 coordination. We than use that slope to move around its gradiant descent (the first graph in this section) to find a global minimum. But we will gonna have far more complex functions to derivate and to be accurate we pick as second coordinate something that is closest to first picked coordinations.</p>
-<p>This isn't much elegant solution and because of that neural network libraries use Leibniz Notations, because they calculate slope "instantly" (without second coordinates), which is far accurate and faster. To demonstrate it:</p>
+<p><code>Result is -1.25</code>; that mean if we take some <em>x coordination</em> like for example <em>x2</em> and multiply it with the <em>slope</em>, we get <em>y2 coordination</em>. We than use that slope to move around its <strong>gradiant descent</strong> (the first graph in this section) to find a <strong>global minimum</strong>. But we will gonna have far more complex functions to derivate and to be accurate we pick as second coordinate something that is closest to first picked coordinations.</p>
+<p>This isn't much elegant solution and because of that neural network libraries use Leibniz Notations, because they calculate <strong>slope</strong> <em>instantly</em> (without second coordinates), which is far accurate and faster. To demonstrate it:</p>
 
 </div>
 </div>
@@ -1334,7 +1327,7 @@ $$y'=2$$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You can read more about it here <a href="https://www.mathsisfun.com/calculus/derivatives-introduction.html">here</a> or I recommend <a href="https://www.khanacademy.org/math/calculus-all-old/taking-derivatives-calc">Khan Academy</a>.</p>
-<p>Now is time to implement it for our functions. You can checkout all activation functions and their derivatives <a href="https://en.wikipedia.org/wiki/Activation_function">here</a> (checkout there sigmoid function and its derivative function to spot their differencies and remember that derivative function is a slope of original funciton).</p>
+<p>Now is time to implement it for our functions. You can checkout all <strong>activation functions</strong> and their <strong>derivatives</strong> <a href="https://en.wikipedia.org/wiki/Activation_function">here</a> (checkout there sigmoid function and its derivative function to spot their differencies and remember that derivative function is a slope of original funciton).</p>
 
 </div>
 </div>
@@ -1342,7 +1335,7 @@ $$y'=2$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some derivative need to remember input from the forward pass and because we start with loss, which is "at the end of forward pass", we need to compute backward and we will compute it as chain that put result of previous derivative to another (those are called gradients).</p>
+<p>Some derivative need to remember input from the forward pass and because we start with a <strong>loss (from loss function)</strong>, which is "at the end of forward pass", we need to compute backward and we will <strong>compute it as chain</strong> that put result of previous derivative to another (those are called <strong>gradients</strong>).</p>
 <p>Luckily implementation in the code is fairly easy:</p>
 
 </div>
@@ -1394,7 +1387,7 @@ $$y'=2$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is only one last missing piece. We need to update our parameters and for that we use optimizer.</p>
+<p>There is only one last missing piece. We need to <strong>update parameters</strong> and for that we use <strong>optimizer</strong>.</p>
 
 </div>
 </div>
@@ -1405,7 +1398,7 @@ $$y'=2$$
 <h2 id="Optimizer">
 <a class="anchor" href="#Optimizer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimizer<a class="anchor-link" href="#Optimizer"> </a>
 </h2>
-<p>We will use simple one called SGD (Stochastic gradient descent). Here we will need learning rate to say parameters "how big step" we want to do in the gradiant descent.</p>
+<p>We will use simple one called <strong>SGD (Stochastic gradient descent)</strong>. Here we will need <strong>learning rate</strong> to say <strong>parameters</strong> <em>how big step</em> we want to do in the <strong>gradiant descent</strong>.</p>
 
 </div>
 </div>
@@ -1434,7 +1427,7 @@ $$y'=2$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's all! We just need to construct training loop and also batches of data</p>
+<p>That's all! We just need to construct <strong>training loop</strong> and also <strong>batches of data</strong></p>
 
 </div>
 </div>
@@ -1445,7 +1438,7 @@ $$y'=2$$
 <h1 id="Prepare-data-in-a-batches">
 <a class="anchor" href="#Prepare-data-in-a-batches" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prepare data in a batches<a class="anchor-link" href="#Prepare-data-in-a-batches"> </a>
 </h1>
-<p>So far we have been reshaping data with the shape (1, 784), but we will be computing multiple images at once for better results, that is called generalizing.We initiate batch randomly. I tried to make it orderly, but I got worse results.</p>
+<p>So far we have been reshaping data with the shape (1, 784), but we will be computing multiple images at once for better results, that is called <strong>generalizing</strong>. <code>We initiate batch randomly.</code> I tried to make it orderly, but I got worse results.</p>
 
 </div>
 </div>
@@ -1473,7 +1466,7 @@ $$y'=2$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Commonly is used batch sizes of 64, 128, 256.</p>
+<p>Commonly is used batch sizes of 64, 128, 256. We have to be careful we won't <strong>overfit</strong> neural network with <strong>learning rate and size of batch</strong>, else our NN would start to <em>memorize</em> training data and perform far worse on <em>unseen data</em>.</p>
 
 </div>
 </div>
@@ -1484,7 +1477,7 @@ $$y'=2$$
 <h1 id="Constructing-training-loop">
 <a class="anchor" href="#Constructing-training-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constructing training loop<a class="anchor-link" href="#Constructing-training-loop"> </a>
 </h1>
-<p>When we get output from our model we threat it as one-hot encoded array and we tranform it to single number. We can than compare it with labels (targets) to keep track of accuracy. Also we will track of loss and to compute it we need sum it together. After the training loop we will plot losses and accuraccies.</p>
+<p>When we get output from our model we threat it as <strong>one-hot encoded</strong> array and we tranform it to single number. We can than compare it with <strong>labels (targets)</strong> to keep track of <strong>accuracy</strong>. Also we will track of <strong>loss</strong> and to compute it we need sum it together. After the training loop we will plot losses and accuraccies.</p>
 
 </div>
 </div>
@@ -1695,7 +1688,7 @@ $$y'=2$$
 <p></p>
 <div class="flash flash-success">
     <svg class="octicon octicon-checklist octicon octicon-checklist" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 1.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v7.736a.75.75 0 101.5 0V1.75A1.75 1.75 0 0011.25 0h-8.5A1.75 1.75 0 001 1.75v11.5c0 .966.784 1.75 1.75 1.75h3.17a.75.75 0 000-1.5H2.75a.25.25 0 01-.25-.25V1.75zM4.75 4a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM4 7.75A.75.75 0 014.75 7h2a.75.75 0 010 1.5h-2A.75.75 0 014 7.75zm11.774 3.537a.75.75 0 00-1.048-1.074L10.7 14.145 9.281 12.72a.75.75 0 00-1.062 1.058l1.943 1.95a.75.75 0 001.055.008l4.557-4.45z"></path></svg>
-    <strong>Tip: </strong>Pro tip: it is more efficient to train on already trained parameters even if they were trained on different projects.
+    <strong>Tip: </strong>It is more efficient to train on already trained parameters even if they were trained on different data (as long as they match shapes for your model).
 </div>
 
 </div>
