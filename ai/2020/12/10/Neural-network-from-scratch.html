@@ -1297,6 +1297,14 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Some derivative need to remember input from the forward pass and because we start with a <strong>loss (from loss function)</strong>, which is "at the end of forward pass", we need to compute backward and we will <strong>compute it as chain</strong> that put result of previous derivative to another (those are called <strong>gradients</strong>).</p>
+<p>If you want know in detailes derivative of <a href="https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/#derivative-of-the-softmax">softmax</a>.</p>
+<p>For ReLU it is:</p>
+
+<pre><code>        f(x) =  0 if x' &lt; 0 
+                x if x' &gt;= 0</code></pre>
+<ul>
+<li>where x is gradiant (output from previous derivation) and x' is input from w1  </li>
+</ul>
 <p>Luckily implementation in the code is fairly easy:</p>
 
 </div>
