@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Neural network from scratch (Almost almost finished) | ludius blog</title>
+<title>Neural network from scratch | ludius blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Neural network from scratch (Almost almost finished)" />
+<meta property="og:title" content="Neural network from scratch" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Learn to build one so you can brag about it." />
 <meta property="og:description" content="Learn to build one so you can brag about it." />
-<link rel="canonical" href="https://ludius0.github.io/my-blog/ai/2020/12/10/Neural-network-from-scratch.html" />
-<meta property="og:url" content="https://ludius0.github.io/my-blog/ai/2020/12/10/Neural-network-from-scratch.html" />
+<link rel="canonical" href="https://ludius0.github.io/my-blog/ai/2020/12/14/Neural-network-from-scratch.html" />
+<meta property="og:url" content="https://ludius0.github.io/my-blog/ai/2020/12/14/Neural-network-from-scratch.html" />
 <meta property="og:site_name" content="ludius blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-12-10T00:00:00-06:00" />
+<meta property="article:published_time" content="2020-12-14T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"https://ludius0.github.io/my-blog/ai/2020/12/10/Neural-network-from-scratch.html","@type":"BlogPosting","headline":"Neural network from scratch (Almost almost finished)","dateModified":"2020-12-10T00:00:00-06:00","datePublished":"2020-12-10T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ludius0.github.io/my-blog/ai/2020/12/10/Neural-network-from-scratch.html"},"description":"Learn to build one so you can brag about it.","@context":"https://schema.org"}</script>
+{"url":"https://ludius0.github.io/my-blog/ai/2020/12/14/Neural-network-from-scratch.html","@type":"BlogPosting","headline":"Neural network from scratch","dateModified":"2020-12-14T00:00:00-06:00","datePublished":"2020-12-14T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ludius0.github.io/my-blog/ai/2020/12/14/Neural-network-from-scratch.html"},"description":"Learn to build one so you can brag about it.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/my-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ludius0.github.io/my-blog/feed.xml" title="ludius blog" /><link rel="shortcut icon" type="image/x-icon" href="/my-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -71,13 +71,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Neural network from scratch (Almost almost finished)</h1><p class="page-description">Learn to build one so you can brag about it.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-10T00:00:00-06:00" itemprop="datePublished">
-        Dec 10, 2020
+    <h1 class="post-title p-name" itemprop="name headline">Neural network from scratch</h1><p class="page-description">Learn to build one so you can brag about it.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-14T00:00:00-06:00" itemprop="datePublished">
+        Dec 14, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      19 min read
+      20 min read
     
 </span></p>
 
@@ -95,19 +95,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/ludius0/my-blog/tree/master/_notebooks/2020-12-10-Neural-network-from-scratch.ipynb" role="button" target="_blank">
+    <a href="https://github.com/ludius0/my-blog/tree/master/_notebooks/2020-12-14-Neural-network-from-scratch.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/my-blog/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/ludius0/my-blog/master?filepath=_notebooks%2F2020-12-10-Neural-network-from-scratch.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/ludius0/my-blog/master?filepath=_notebooks%2F2020-12-14-Neural-network-from-scratch.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/my-blog/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/ludius0/my-blog/blob/master/_notebooks/2020-12-10-Neural-network-from-scratch.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/ludius0/my-blog/blob/master/_notebooks/2020-12-14-Neural-network-from-scratch.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/my-blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -117,11 +117,11 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Prerequisities">Prerequisities </a></li>
-<li class="toc-entry toc-h1"><a href="#Numpy">Numpy </a></li>
+<li class="toc-entry toc-h1"><a href="#NumPy">NumPy </a></li>
 <li class="toc-entry toc-h1"><a href="#MNIST-dataset">MNIST dataset </a></li>
 <li class="toc-entry toc-h1"><a href="#How-it-looks-like?">How it looks like? </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Pytorch-example">Pytorch example </a></li>
+<li class="toc-entry toc-h2"><a href="#PyTorch-example">PyTorch example </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Neural-network-structure">Neural network structure </a>
@@ -140,7 +140,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-12-10-Neural-network-from-scratch.ipynb
+# file to edit: _notebooks/2020-12-14-Neural-network-from-scratch.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -148,7 +148,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To have genuine understanding of neural networks is valuable, because they feel like "black boxes". To be sure we understand it, we should build one from scratch so I decided to do it and write about it. In this post I will build one from scratch for classifying <a href="http://yann.lecun.com/exdb/mnist/">MNIST</a> dataset and touch underlying concepts behind it. Hope it helps.</p>
+<p>To have a genuine understanding of neural networks is valuable because they feel like "black boxes." To be sure we understand it, we should build one from scratch, so I decided to create one and write about it. In this post, I will build one from scratch for classifying <a href="http://yann.lecun.com/exdb/mnist/">MNIST</a> dataset and touch on underlying concepts behind it. I hope it helps.</p>
 
 </div>
 </div>
@@ -159,7 +159,7 @@ window.onload = wrap_img;
 <h1 id="Prerequisities">
 <a class="anchor" href="#Prerequisities" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisities<a class="anchor-link" href="#Prerequisities"> </a>
 </h1>
-<p>Code is written in <code>python 3.8+</code> and I use library called <code>numpy</code> for matrixes multiplication. A math behind <code>neural networks</code> can looks like daughting, but it is basically high school math.</p>
+<p>Code is written in <code>python 3.8+</code> and I use the library called <code>NumPy</code> for matrixes multiplication. The math behind <code>neural networks</code> can look daunting, but it is basically high school math.</p>
 <p>This is everything I am going to import for building NN:</p>
 
 </div>
@@ -187,8 +187,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Numpy">
-<a class="anchor" href="#Numpy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Numpy<a class="anchor-link" href="#Numpy"> </a>
+<h1 id="NumPy">
+<a class="anchor" href="#NumPy" aria-hidden="true"><span class="octicon octicon-link"></span></a>NumPy<a class="anchor-link" href="#NumPy"> </a>
 </h1>
 </div>
 </div>
@@ -196,8 +196,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Neural networks use <strong>tensor</strong> for passing multiple data through network. In python we don't have <strong>tensors</strong>, but those can be represented with <a href="https://numpy.org/">numpy library</a>. It provide n-dimensional arrays, faster computing, cleaner code, a few functions we're gonna use and it is commonly used for data science. If you're not familiar with numpy, you can check this <a href="https://www.youtube.com/watch?v=ZB7BZMhfPgk">video</a> to learn about it. Numpy is there explained in detailes, but only two points to numpy:</p>
-<p>Numpy arrays can be also plot with its parent library called <a href="https://matplotlib.org/">matplotlib</a></p>
+<p>Neural networks use <strong>tensor</strong> for passing multiple data through a network. In python, we don't have <strong>tensors</strong>, but those can be represented with arrays from <a href="https://numpy.org/">NumPy library</a>. It provides n-dimensional arrays, faster computing, cleaner code, a few functions we're gonna use and it is commonly used for data science. If you're not familiar with NumPy, you can check this <a href="https://www.youtube.com/watch?v=ZB7BZMhfPgk">video</a> to learn about it. Numpy is there explained in details, but only two points to NumPy:</p>
+<p>NumPy arrays can be also plotted with its parent library called <a href="https://matplotlib.org/">Matplotlib</a></p>
 
 </div>
 </div>
@@ -240,7 +240,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>and we'll use special operation called <code>np.dot</code>, which multiply two arrays by taking rows of first array and columns of second array. If our array doesn't match needed shape we can flip it with <code>.T</code> operation (transpose).</p>
+<p>and we'll use a special operation called <code>np.dot</code>, which multiplies two arrays by taking rows of the first array and columns of the second array. If our array doesn't match the needed shape we can flip it with <code>.T</code> operation (transpose).</p>
 
 </div>
 </div>
@@ -289,7 +289,7 @@ window.onload = wrap_img;
 <h1 id="MNIST-dataset">
 <a class="anchor" href="#MNIST-dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>MNIST dataset<a class="anchor-link" href="#MNIST-dataset"> </a>
 </h1>
-<p>Before we start to build one, we have to import dataset to work with. For that we need this code:</p>
+<p>Before we start to build one, we have to import the dataset to work with. For that we need this code:</p>
 
 </div>
 </div>
@@ -303,6 +303,7 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">gzip</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">hashlib</span>
 <span class="c1"># source: http://yann.lecun.com/exdb/mnist/</span>
+<span class="c1"># modified from: https://github.com/geohot/ai-notebooks/blob/master/mnist_from_scratch.ipynb</span>
 
 <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="n">filename</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -338,7 +339,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>MNIST dataset</strong> is made from <code>70000 images</code>. It is split in two types: <code>training (60k)</code> &amp; <code>testing (10k)</code> data. Each image has 28 to 28 pixels and own label, which describe it.</p>
+<p><strong>MNIST dataset</strong> is made from <code>70000 images</code>. It is split in two types: <code>training (60k)</code> &amp; <code>testing (10k)</code> data. Each image has 28 to 28 pixels and its own label, which describes it.</p>
 
 </div>
 </div>
@@ -391,7 +392,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The reason we have a splited dataset is for validating how (if even) our network function properly. We will be passing images as flatten image through neural network to "show it" whole image. Right now we are going to pass only one image, but later we will be passing more at once as <strong>batch</strong>. So shape is:</p>
+<p>The reason we have a split dataset is for validating how (if even) our network functions properly. We will be passing images as flatten images through the neural network to "show it" the whole image. Right now we are going to pass only one image, but later we will be passing more at once as <strong>batch</strong>. So shape is:</p>
 
 </div>
 </div>
@@ -445,7 +446,7 @@ window.onload = wrap_img;
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>We have that shape because it is only one image and 28 (pixels) multiply by 28 equel 784.
+    <strong>Note: </strong>We have that shape because it is only one image and 28 (pixels) multiply by 28 equal 784.
 </div>
 
 </div>
@@ -508,8 +509,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is how <strong>Neural Network (NN)</strong> looks like! Our inputs are MNIST images in the form of numpy 2D array (matrix), which contains numbers between <code>0 to 1</code>. Usually we represent data between <code>0 to 1</code> or <code>-1 to 1</code> (It is unwritten golden rule). <strong>Architecture (model)</strong> is basically our neural network. There we pass inputs through <strong>nodes (neurons)</strong>, which compute some operations with <strong>parameters</strong> and we get <strong>predictions</strong>. We than take <strong>labels (targets)</strong> and compare them with our prediction. We measure <em>how wrong</em> our model was with <strong>loss function</strong> and use it to <strong>update</strong> <strong>parameters</strong> so it could "learn".</p>
-<p>Maybe now is a good question <code>what is even neural network?</code>. It is inspired from neurons in our brain. Neuron "fire" signal if it get certain amount of input and millions of them can create complex structures. For our case we won't need millions of them, but only a few. Right now there are three types of structure in the field: <strong>linear, convolutional and reccurent</strong>. We are going to use simplest and oldest one the <strong>linear layer</strong>:</p>
+<p>This is how a <strong>Neural Network (NN)</strong> looks like! Our inputs are MNIST images in the form of a NumPy 2D array (matrix), which contains numbers between <code>0 to 1</code>. Usually, we represent data between <code>0 to 1</code> or <code>-1 to 1</code> (It is an unwritten golden rule). <strong>Architecture (model)</strong> is basically our neural network. There we pass inputs through <strong>nodes (neurons)</strong>, which compute some operations with <strong>parameters</strong> and we get <strong>predictions</strong>. We then take <strong>labels (targets)</strong> and compare them with our prediction. We measure <em>how wrong</em> our model was with the <strong>loss function</strong> and use it to <strong>update</strong> <strong>parameters</strong> so it could "learn".</p>
+<p>Maybe now is a good question <code>what is even neural network?</code>. It is inspired by neurons in our brain. Neuron "fire" signal if it gets a certain amount of input and millions of them can create complex structures. For our case, we won't need millions of them, but only a few. Right now there are three types of structure in the field: <strong>linear, convolutional, and recurrent</strong>. We are going to use the simplest and oldest one the <strong>linear layer</strong>:</p>
 <p><code>outputs = weights * inputs + biases</code></p>
 
 </div>
@@ -518,7 +519,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we can see it is a <strong>linear function</strong>. In our <strong>model</strong> we won't use <strong>biases</strong>, so <strong>weights</strong> are only <strong>parameters</strong> we will be <strong>updating in training loop</strong>.</p>
+<p>As we can see it is a linear function. In our model, we won't use biases, so weights are the only parameters we will be updating in the training loop.</p>
 
 </div>
 </div>
@@ -529,7 +530,7 @@ window.onload = wrap_img;
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>With this our model will be learning on it’s own and when our programming function is creating own function, we call it <strong>machine learning</strong>.
+    <strong>Note: </strong>With this, our model will be learning on its own and when our programming function is creating its own function, we call it <strong>machine learning</strong>.
 </div>
 
 </div>
@@ -538,8 +539,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So far so good, but to clarify how our architecture will looks like: <strong>every node (neuron) will be linear function and we stack them as full layer and pass every input to every node, where each contain parameter. We than stack multiple layers.</strong></p>
-<p>This image (below) roughly show how neural network looks like. Here it is defined with: <em>input layer (16 nodes), hidden layer 1 (12 nodes), hidden layer 2 (12 nodes), output layer (1 node)</em>.</p>
+<p>So far, so good, but to clarify how our architecture will look like: <strong>every node (neuron) will be a linear function, and we stack them as a full layer and pass every input to every node, where each contains a parameter. We then stack multiple layers.</strong></p>
+<p>This image (below) roughly show how a neural network looks like. Here it is defined with: <em>input layer (16 nodes), hidden layer 1 (12 nodes), hidden layer 2 (12 nodes), output layer (1 node)</em>.</p>
 
 </div>
 </div>
@@ -578,7 +579,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Each of those "strings" are <strong>weights</strong> (parameter) and we can see that every <strong>node</strong> has own <strong>weight</strong> for every <strong>node</strong> from previous <strong>layer</strong>. We will create only one <strong>hidden layer</strong> with 128 nodes. Our input layer is <em>flatten</em>, where each pixel is represented as <em>one node</em> in the <strong>input layer</strong>. Last layer is <strong>output layer</strong> and because we classify 0-9 images it will have 10 nodes.</p>
+<p>Each of those "strings" is <strong>weights</strong> (parameter) and we can see that every <strong>node</strong> has its own <strong>weight</strong> for every <strong>node</strong> from the previous <strong>layer</strong>. We will create only one <strong>hidden layer</strong> with 128 nodes. Our input layer is <strong>flattened</strong>, where each pixel is represented as one node in the <strong>input layer</strong>. The last layer is the <strong>output layer</strong>, and because we classify 0-9 images it will have 10 nodes.</p>
 
 </div>
 </div>
@@ -589,7 +590,7 @@ window.onload = wrap_img;
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>When neural network has more hidden layers we than call it <strong>deep learning</strong> (which is subset field of machine learning).
+    <strong>Note: </strong>When a neural network has more hidden layers we call it <strong>deep learning</strong> (which is a subset field of machine learning).
 </div>
 
 </div>
@@ -598,8 +599,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Pytorch-example">
-<a class="anchor" href="#Pytorch-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pytorch example<a class="anchor-link" href="#Pytorch-example"> </a>
+<h2 id="PyTorch-example">
+<a class="anchor" href="#PyTorch-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>PyTorch example<a class="anchor-link" href="#PyTorch-example"> </a>
 </h2>
 </div>
 </div>
@@ -607,7 +608,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To show you what everything we will be implementing from scratch I have prepared example made with popular deep learning library called <strong>pytorch</strong>. Just hit "show code" button to have some picture how code will looks like.</p>
+<p>To show you everything we will be implementing from scratch I have prepared an example made with a popular deep learning library called <strong>PyTorch</strong>. Just hit the "show code" button to have a picture of what in the code we are going to implement (from scratch).</p>
 
 </div>
 </div>
@@ -680,7 +681,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It evaluated about <code>96%</code> on testing set. We will be recreating this whole code from scratch.</p>
+<p>It evaluated about <code>96%</code> on the testing set. We will be recreating this whole code from scratch.</p>
 
 </div>
 </div>
@@ -691,7 +692,7 @@ window.onload = wrap_img;
 <h1 id="Neural-network-structure">
 <a class="anchor" href="#Neural-network-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Neural network structure<a class="anchor-link" href="#Neural-network-structure"> </a>
 </h1>
-<p>As the first image show in the <code>How it looks like?</code> we will be implementing everything what is there. The whole code for neural network should be under 100 lines of code in python.</p>
+<p>As the first image show in the <code>How it looks like?</code>, we will be implementing everything that is there. The whole code for the neural network should be under 100 lines of code in python.</p>
 
 </div>
 </div>
@@ -702,8 +703,8 @@ window.onload = wrap_img;
 <h2 id="Parameters-(Weights)">
 <a class="anchor" href="#Parameters-(Weights)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters (Weights)<a class="anchor-link" href="#Parameters-(Weights)"> </a>
 </h2>
-<p>We're going to have three layers: <em>input layer (784 nodes)</em>, <em>hidden layer (128 nodes)</em> and <em>output layer (10 nodes)</em>. We pass input to first hidden layer and ouput will be <strong>pass forward</strong> to another layer to next layer until it reach final layer (output layer). Each node will contain own <strong>parameter</strong>, which will perform some operation with the input. We are going to use simple linear layer (only <strong>weights</strong>) and so our parameters will be only one array for each layer.</p>
-<p><em>Every</em> neural network library use own initiate functions that create usually numbers between <code>-1 to 1</code> or <code>0 to 1</code>. I chose <code>uniform function</code>, because it performed best from what I have observed.</p>
+<p>We're going to have three layers: <em>input layer (784 nodes)</em>, <em>hidden layer (128 nodes)</em>, and <em>output layer (10 nodes)</em>. We pass input to the first hidden layer and output will be <strong>pass forward</strong> to another layer to the next layer until it reaches the final layer (output layer). Each node will contain its own <strong>parameter</strong>, which will perform some operation with the input. We are going to use a simple linear layer (only <strong>weights</strong>), so our parameters will be only one array for each layer.</p>
+<p><em>Every</em> neural network library uses its own initiate functions that create usually numbers between <code>-1 to 1</code> or <code>0 to 1</code>. I chose <code>uniform function</code> because it performed best from what I have observed.</p>
 
 </div>
 </div>
@@ -776,7 +777,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the code <strong>weights</strong> (w1 and w2) are <em>representing</em> whole layer. We can see in <code>_uniform(784, 128)</code> and <code>_uniform(128, 10)</code> we input whole all three layers of our <strong>model</strong>.</p>
+<p>In the code, <strong>weights</strong> (w1 and w2) are <em>representing</em> whole layer. We can see in <code>_uniform(784, 128)</code> and <code>_uniform(128, 10)</code> we input the whole all three layers of our <strong>model</strong>.</p>
 
 </div>
 </div>
@@ -793,7 +794,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We are representing <strong>linear layers</strong> as inputs multiply by <strong>weights</strong>. To perform our linear pass we take one image from training set and use <code>np.dot</code> with our first parameters <code>w1</code> and we compute same with its output and second parameters <code>w2</code>.</p>
+<p>We are representing <strong>linear layers</strong> as inputs multiply by <strong>weights</strong>. To perform our linear pass we take one image from the training set and use <code>np.dot</code> with our first parameters <code>w1</code> and we compute the same with its output and second parameters <code>w2</code>.</p>
 
 </div>
 </div>
@@ -870,7 +871,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With linear layers we use <strong>activation function</strong>. They are <strong>non-linear function</strong>. We use them to have non-linear outputs. Imagine your input data are for example sinus. If our architecture would be only made by <strong>linear function (linear layers)</strong> it couldn't learn how to "bend" output to something similiar to sinus.</p>
+<p>With linear layers, we use an <strong>activation functions</strong>. They are <strong>non-linear function</strong>. We use them to have non-linear outputs. Imagine your input data are, for example, sinus. If our architecture would be only made by a <strong>linear function (linear layers)</strong>, it couldn't learn how to "bend" output to something similar to the sinus.</p>
 
 </div>
 </div>
@@ -901,7 +902,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We use it after <strong>hidden layer</strong>. Because we only classify It isn't neccesity, but we still get better performance. We implement <strong>ReLU (Rectified linear unit)</strong>, which is most used. <strong>ReLU</strong> is defined as <code>if input &lt; 0 than 0 else input</code> and to implement it is really easy:</p>
+<p>We use it after the <strong>hidden layer</strong>. Because we only classify It isn't a necessity, but we still get better performance. We implement <strong>ReLU (Rectified linear unit)</strong>, which is most used. <strong>ReLU</strong> is defined as <code>if input &lt; 0 than 0 else input</code> and to implement it is really easy:</p>
 
 </div>
 </div>
@@ -1004,7 +1005,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's it. We have forward pass for our neural network. After we pass image we get output of <em>size 10</em>. But the real question is <code>how it will learn?</code>.</p>
+<p>That's it. We have a forward pass for our neural network. After we pass the image array, we get an output of <em>size 10</em>. But the real question is <code>How it will learn?</code>.</p>
 
 </div>
 </div>
@@ -1015,9 +1016,8 @@ window.onload = wrap_img;
 <h2 id="Loss-function">
 <a class="anchor" href="#Loss-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loss function<a class="anchor-link" href="#Loss-function"> </a>
 </h2>
-<p>To teach neural network we have to figured how to represented how big is <strong>error (difference)</strong> between <strong>prediction</strong> and 
-<strong>label</strong>.</p>
-<p>We can represent label as <code>one-hot encoded array</code>; so if it's number 6 it create array of zeros (10,) and place number one on its 6 position.</p>
+<p>To teach neural network we have to figure out how to represented how big is an <strong>error (difference)</strong> between <strong>prediction</strong> and <strong>label</strong>.</p>
+<p>We can represent the label as <code>one-hot encoded array</code>, so if it's number 6 it creates an array of zeros (10,) and places number one on its 6 positions.</p>
 
 </div>
 </div>
@@ -1075,7 +1075,7 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can see its <strong>prediction</strong> is wrong. We can calculate <strong>error</strong> simply like <code>target - output</code>, but because our <strong>classes (targets/labels)</strong> are mutually exclusive we will use specialised function for classification called <strong>LogSoftmax</strong>. With that our differences are "maginified". Here is implementation in a code:</p>
+<p>We can see its <strong>prediction</strong> is wrong. We can calculate <strong>error</strong> simply like <code>target - output</code>, but because our <strong>classes (targets/labels)</strong> are mutually exclusive, we will use the specialized function for classification called <strong>LogSoftmax</strong>. With that, our differences are "magnified." Here is the implementation in a code:</p>
 
 </div>
 </div>
@@ -1121,7 +1121,7 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We have our <strong>loss function</strong>, but we won't be implementing in forward pass. We use <strong>loss function</strong> to <strong>update</strong> our <strong>parameters</strong>, which are <code>w1</code> and <code>w2</code> so we are going to implement backward pass.</p>
+<p>We have our <strong>loss function</strong>, but we won't be implementing it in the <code>forward pass</code>. We use the <strong>loss function</strong> to <strong>update</strong> our <strong>parameters</strong>, which are <code>w1</code> and <code>w2</code>, we will implement the backward pass.</p>
 
 </div>
 </div>
@@ -1132,7 +1132,7 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
 <h2 id="Backpropagation">
 <a class="anchor" href="#Backpropagation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backpropagation<a class="anchor-link" href="#Backpropagation"> </a>
 </h2>
-<p>The fundamental question is <code>How do you meaningfully update parameters?</code>. Answer is we use <strong>derivatives</strong> of functions we implemented in <strong>architecture (model)</strong>. <strong>Derivatives</strong> are representing <code>slope</code> of original function. All those results from each layers give us <em>multidimensional representation</em> called <strong>gradiant descent</strong>. We calculate them to find how much we need to increase or decrease parameter, so we would decrease a <strong>loss</strong> and <strong>update parameters</strong>. This part is conceptually hardest one to understand.</p>
+<p>The fundamental question is <code>How do you meaningfully update parameters?</code>. The answer is we use <strong>derivatives</strong> of functions we implemented in <strong>architecture (model)</strong>. <strong>Derivatives</strong> are representing the <code>slope</code> of the original function. All those results from each layer give us a  <em>multidimensional representation</em> called <strong>gradient descent</strong>. We calculate them to find how much we need to increase or decrease parameters so we would decrease a <strong>loss</strong> and <strong>update parameters</strong>. This part is conceptually the hardest one to understand.</p>
 <p>Let's say we have only one small linear <strong>hidden layer</strong> with a <strong>loss function</strong> and we get this:</p>
 
 </div>
@@ -1164,8 +1164,7 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Our goal is to <strong>update parameters</strong> to decrease a <strong>loss</strong>, which represent <em>how wrong model was</em> so it would be next time more accurate. If we calculate <strong>derivative</strong> we can get something like in graph above (probably with more dimensions).
-Let's take that red dot as one of the <strong>weights (parameters)</strong> and calculate <strong>derivative of loss with respect to the parameters</strong> and we get something that can represented like this:</p>
+<p>Our goal is to <strong>update parameters</strong> to decrease a <strong>loss</strong>, which represents <em>how the wrong model was</em> so it would be next time more accurate. If we calculate <strong>derivative</strong> we can get something like in the graph above (probably with more dimensions). Let's take that red dot as one of the <strong>weights (parameters)</strong> and calculate the <strong>derivative of loss with respect to the parameters</strong> and we get something that can be represented like this:</p>
 
 </div>
 </div>
@@ -1196,9 +1195,9 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we know the <strong>slope</strong>, it just need some push to the right and for that we use use <strong>learning rate</strong> and <strong>optimizer</strong> later.</p>
-<p>We are interest only in the three types of derivatives function. Those are: <strong>Linear, ReLU and LogSoftmax</strong>. Also we will need for <strong>LogSoftmax</strong> a <strong>derivative one-hot encoded label (target)</strong>, so how do we even compute <strong>derivatives</strong>?</p>
-<p>Remember that derivatives are just <strong>slopes</strong>. If we take for example linear function like this one:</p>
+<p>Now we know the <strong>slope</strong>, it just needs some push to the right, and for that, we use <strong>learning rate</strong> and <strong>optimizer</strong> later.</p>
+<p>We are interested only in the three types of derivatives function. Those are <strong>Linear, ReLU, and LogSoftmax</strong>. Also, we will need for <strong>LogSoftmax</strong> a <strong>derivative one-hot encoded label (target)</strong>, so how do we even compute <strong>derivatives</strong>?</p>
+<p>Remember that derivatives are just <strong>slopes</strong>. If we take, for example, a linear function like this one:</p>
 
 </div>
 </div>
@@ -1256,9 +1255,9 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>        slope = (y2 - y1) / (x2 - x1)
-        slope = (-5 - 2.5) / (-4 -2)
-        slope = -1.25</code></pre>
+<pre><code>                                            slope = (y2 - y1) / (x2 - x1)
+                                            slope = (-5 - 2.5) / (-4 -2)
+                                            slope = -1.25</code></pre>
 
 </div>
 </div>
@@ -1266,8 +1265,8 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>Result is -1.25</code>; that mean if we take some <em>x coordination</em> like for example <em>x2</em> and multiply it with the <em>slope</em>, we get <em>y2 coordination</em>. We than use that slope to move around its <strong>gradiant descent</strong> (the first graph in this section) to find a <strong>global minimum</strong>. But we will gonna have far more complex functions to derivate and to be accurate we pick as second coordinate something that is closest to first picked coordinations.</p>
-<p>This isn't much elegant solution and because of that neural network libraries use Leibniz Notations, because they calculate <strong>slope</strong> <em>instantly</em> (without second coordinates), which is far accurate and faster. To demonstrate it:</p>
+<p><code>Result is -1.25</code>; that means if we take some <em>x coordination</em> like, for example, <em>x2</em> and multiply it with the <em>slope</em>, we get <em>y2 coordination</em>. We then use that slope to move around its <strong>gradient descent</strong> (the first graph in this section) to find a <strong>global minimum</strong>, but we will have far more complex functions to derivate, and to be accurate, we pick as second coordinate something that is closest to first picked coordinations.</p>
+<p>This isn't much elegant solution, and because of that, neural network libraries use Leibniz Notations because they calculate <strong>slope</strong> <em>instantly</em> (without second coordinates), which is far accurate and faster. To demonstrate it:</p>
 
 </div>
 </div>
@@ -1276,10 +1275,10 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>        y = 2x
-        y' = d/dx * 2x
-        y' = d/d * 2
-        y' = 2</code></pre>
+<pre><code>                                            y = 2x
+                                            y' = d/dx * 2x
+                                            y' = d/d * 2
+                                            y' = 2</code></pre>
 
 </div>
 </div>
@@ -1296,14 +1295,14 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some derivative need to remember input from the forward pass and because we start with a <strong>loss (from loss function)</strong>, which is "at the end of forward pass", we need to compute backward and we will <strong>compute it as chain</strong> that put result of previous derivative to another (those are called <strong>gradients</strong>).</p>
-<p>If you want know in detailes derivative of <a href="https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/#derivative-of-the-softmax">softmax</a>.</p>
+<p>Some derivative need to remember input from the forward pass, and because we start with a <strong>loss (from loss function)</strong>, which is "at the end of the forward pass," we need to compute backward, which we will <strong>compute it as a chain</strong> that put the result of the previous derivative to another (those are called <strong>gradients</strong>).</p>
+<p>If you want to know in detail the derivative of <a href="https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/#derivative-of-the-softmax">softmax</a>.</p>
 <p>For ReLU it is:</p>
 
-<pre><code>        f(x) =  0 if x' &lt; 0 
-                x if x' &gt;= 0</code></pre>
+<pre><code>                                          f(x) =  0 if x' &lt; 0 
+                                                  x if x' &gt;= 0</code></pre>
 <ul>
-<li>where x is gradiant (output from previous derivation) and x' is input from w1  </li>
+<li>where x is the gradient (output from the previous derivation) and x' is input from w1  </li>
 </ul>
 <p>Luckily implementation in the code is fairly easy:</p>
 
@@ -1356,7 +1355,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is only one last missing piece. We need to <strong>update parameters</strong> and for that we use <strong>optimizer</strong>.</p>
+<p>There is only one last missing piece. We need to <strong>update parameters</strong> and for that, we use <strong>optimizer</strong>.</p>
 
 </div>
 </div>
@@ -1367,7 +1366,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>If you are still struggeling with this part, than I recommend this <a href="https://www.youtube.com/watch?v=IHZwWFHWa-w&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&amp;index=2">video series from 3blue1brown</a>, where gradient descent and backpropagation is visualised. You can compare it side by side with the code written so far.
+    <strong>Note: </strong>If you are still struggling with this part, then I recommend this <a href="https://www.youtube.com/watch?v=IHZwWFHWa-w&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&amp;index=2">video series from 3blue1brown</a>, where gradient descent and backpropagation is visualized. You can compare it side by side with the code written so far.
 </div>
 
 </div>
@@ -1379,7 +1378,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <h2 id="Optimizer">
 <a class="anchor" href="#Optimizer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optimizer<a class="anchor-link" href="#Optimizer"> </a>
 </h2>
-<p>We will use simple one called <strong>SGD (Stochastic gradient descent)</strong>. Here we will need <strong>learning rate</strong> to say <strong>parameters</strong> <em>how big step</em> we want to do in the <strong>gradiant descent</strong>.</p>
+<p>We will use a simple one called <strong>SGD (Stochastic gradient descent)</strong>. We will need a <strong>learning rate</strong> to say <strong>derivatives of parameters</strong> <em>how big step</em> we want to do in the <strong>gradient descent</strong> and update <strong>parameters</strong>.</p>
 
 </div>
 </div>
@@ -1408,7 +1407,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's all! We just need to construct <strong>training loop</strong> and also <strong>batches of data</strong></p>
+<p>That's all! We just need to construct a <strong>training loop</strong> and also <strong>batches of data</strong>.</p>
 
 </div>
 </div>
@@ -1419,7 +1418,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <h1 id="Prepare-data-in-a-batches">
 <a class="anchor" href="#Prepare-data-in-a-batches" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prepare data in a batches<a class="anchor-link" href="#Prepare-data-in-a-batches"> </a>
 </h1>
-<p>So far we have been reshaping data with the shape (1, 784), but we will be computing multiple images at once for better results, that is called <strong>generalizing</strong>. We initiate batch randomly.</p>
+<p>So far we have been reshaping data with the shape (1, 784), but we will be computing multiple images at once for better results to achieve better <strong>generalizing</strong>. We initiate batch randomly.</p>
 
 </div>
 </div>
@@ -1447,7 +1446,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Commonly is used batch sizes of 64, 128, 256. We have to be careful we won't <strong>overfit</strong> neural network with <strong>learning rate and size of batch</strong>, else our NN would start to <em>memorize</em> training data and perform far worse on <em>unseen data</em> (you can try it by initiating batches orderly).</p>
+<p>Commonly is used batch sizes of 64, 128, 256. We have to be careful with <strong>batch sizes</strong> and <strong>learning rate</strong>; else we could <strong>overfit</strong> the model. That means our model would "memorize" and not <strong>generalize</strong>, which would result in worse performance on new unseen data (you can try it by initiating batches orderly).</p>
 
 </div>
 </div>
@@ -1458,7 +1457,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <h1 id="Constructing-training-loop">
 <a class="anchor" href="#Constructing-training-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constructing training loop<a class="anchor-link" href="#Constructing-training-loop"> </a>
 </h1>
-<p>When we get output from our model we treat it as <strong>one-hot encoded</strong> array and we tranform it to single number, than we compare it with <strong>labels (targets)</strong> to keep track of <strong>accuracy</strong>. Also we will track <strong>loss</strong> (which we need sum it together). After the training loop we will plot losses and accuraccies.</p>
+<p>When we get output from our model we treat it as <strong>one-hot encoded</strong> array and we transform it to a single number than we compare it with <strong>labels (targets)</strong> to keep track of <strong>accuracy</strong>. Also, we will track <strong>loss</strong> (which we need to sum together). After the training loop, we will plot losses and accuracies.</p>
 
 </div>
 </div>
@@ -1618,7 +1617,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It looks good, but we need to evaluate it. We do it by passing whole testing set. We don't need backward pass anymore if we don't plan to update it.</p>
+<p>It looks good, but we need to evaluate it. We do it by inputting the whole testing set. We don't need the backward pass anymore if we don't plan to update it.</p>
 
 </div>
 </div>
@@ -1665,7 +1664,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We have succesfully build neural network from scratch that evaluate around human level. <strong>Here is whole code: (I have edited little the code to resemple pytorch example):</strong></p>
+<p>We have successfully build a neural network from scratch that evaluates around the human level. <strong>Here is the whole code: (I have edited little the code to resemble PyTorch example):</strong></p>
 
 </div>
 </div>
@@ -1688,6 +1687,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">gzip</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">hashlib</span>
     <span class="c1"># source: http://yann.lecun.com/exdb/mnist/</span>
+    <span class="c1"># modified from: https://github.com/geohot/ai-notebooks/blob/master/mnist_from_scratch.ipynb</span>
     <span class="n">filename</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">full_filename</span> <span class="o">=</span> <span class="s2">"dataset/mnist/"</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">full_filename</span><span class="p">):</span>
@@ -1811,7 +1811,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can compare it with the code from pytorch example and see differences.</p>
+<p>You can compare it with the code from the PyTorch example and see differences.</p>
 
 </div>
 </div>
@@ -1822,12 +1822,11 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
 <h1 id="Conclusion">
 <a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
 </h1>
-<p>I hope it helped. We have made neural network that classify digits on human level. When I was starting with neural networks I was often confused with concepts behind them and their implementations in the code, but best way to learn is by doing and keep pushing. If you would like to continue I recommend you this resources (from which I have learned):</p>
+<p>I hope it helped. We have made a neural network that classifies digits on a human level. When I was starting with neural networks, I was often confused with the concepts behind them and their implementations in the code, but the best way to learn is by doing and keep pushing. If you would like to continue, I recommend these resources (from which I have learned):</p>
 <ul>
-<li><a href="https://course.fast.ai/">https://course.fast.ai/</a></li>
+<li><a href="https://www.fast.ai">https://www.fast.ai</a></li>
 <li><a href="https://www.amazon.com/gp/product/B01EER4Z4G/ref=ppx_yo_dt_b_d_asin_title_o03?ie=UTF8&amp;psc=1">https://www.amazon.com/gp/product/B01EER4Z4G/ref=ppx_yo_dt_b_d_asin_title_o03?ie=UTF8&amp;psc=1</a></li>
 <li><a href="https://www.amazon.com/gp/product/B085Z96M9P/ref=dbs_a_def_rwt_bibl_vppi_i1">https://www.amazon.com/gp/product/B085Z96M9P/ref=dbs_a_def_rwt_bibl_vppi_i1</a></li>
-<li><a href="https://www.youtube.com/watch?v=mwmke957ki4&amp;t=3597s">https://www.youtube.com/watch?v=mwmke957ki4&amp;t=3597s</a></li>
 </ul>
 
 </div>
@@ -1845,7 +1844,7 @@ Let's take that red dot as one of the <strong>weights (parameters)</strong> and 
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/my-blog/ai/2020/12/10/Neural-network-from-scratch.html" hidden></a>
+</script><a class="u-url" href="/my-blog/ai/2020/12/14/Neural-network-from-scratch.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
