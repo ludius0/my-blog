@@ -1255,9 +1255,9 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>                                            slope = (y2 - y1) / (x2 - x1)
-                                            slope = (-5 - 2.5) / (-4 -2)
-                                            slope = -1.25</code></pre>
+<pre><code>                                    slope = (y2 - y1) / (x2 - x1)
+                                    slope = (-5 - 2.5) / (-4 -2)
+                                    slope = -1.25</code></pre>
 
 </div>
 </div>
@@ -1275,7 +1275,7 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-<pre><code>                                            y = 2x
+<pre><code>                                             y = 2x
                                             y' = d/dx * 2x
                                             y' = d/d * 2
                                             y' = 2</code></pre>
@@ -1728,7 +1728,7 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
         <span class="c1"># parameters</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">w1</span> <span class="o">=</span> <span class="n">_uniform</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">w2</span> <span class="o">=</span> <span class="n">_uniform</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="mf">0.001</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">lr</span>
     
     <span class="k">def</span> <span class="nf">calc_loss</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># logsoftmax loss function</span>
