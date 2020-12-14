@@ -39,7 +39,7 @@ baseurl: "/my-blog" # the subpath of your site, e.g. "/blog".
 # Github and twitter are optional:
 minima:
   social_links:
-    #twitter: fastdotai
+    #twitter:
     github: ludius0
 
 # Set this to true to get LaTeX math equation support
@@ -58,7 +58,7 @@ annotations: false
 show_tags: true
 
 # Add your Google Analytics ID here if you have one and want to use it
-google_analytics: G-F7N8LXER71
+google_analytics: 185517822
 
 exclude:
   - docker-compose.yml
