@@ -295,6 +295,50 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Alternatively, you can use the Python <code>@</code> operator for matrix multiplications.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr1</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">arr2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[-0.5081598 ,  0.29138089,  0.67837477,  0.19979245],
+       [-0.27515243,  0.77095284, -0.42650189,  1.28282271],
+       [-0.49381512,  0.70157455,  0.11754107,  0.9956999 ],
+       [ 0.52683367, -0.33922572, -0.65522606, -0.27827649]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="MNIST-dataset">
 <a class="anchor" href="#MNIST-dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>MNIST dataset<a class="anchor-link" href="#MNIST-dataset"> </a>
 </h1>
@@ -1204,6 +1248,18 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>It is not obvious, but by decreasing the parameters, we cause some parameters to be less important than the others, and with different inputs, each parameter will have different impact on the result.
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Now we know the <strong>slope</strong>, it just needs some push to the right, and for that, we use <strong>learning rate</strong> and <strong>optimizer</strong> later.</p>
 <p>We are interested only in the three types of derivatives function. Those are <strong>Linear, ReLU, and LogSoftmax</strong>. Also, we will need for <strong>LogSoftmax</strong> a <strong>derivative one-hot encoded label (target)</strong>, so how do we even compute <strong>derivatives</strong>?</p>
 <p>Remember that derivatives are just <strong>slopes</strong>. If we take, for example, a linear function like this one:</p>
@@ -1305,8 +1361,8 @@ Prediction: [[-0.85878235 -0.665328   -0.11946356 -1.221584   -0.23490652  1.068
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Some derivative need to remember input from the forward pass, and because we start with a <strong>loss (from loss function)</strong>, which is "at the end of the forward pass," we need to compute backward, which we will <strong>compute it as a chain</strong> that put the result of the previous derivative to another (those are called <strong>gradients</strong>).</p>
-<p>If you want to know in detail the derivative of <a href="https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/#derivative-of-the-softmax">softmax</a>.</p>
-<p>For ReLU it is:</p>
+<p>If you want to know in detail the derivative of <a href="https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/#derivative-of-the-softmax"><strong>softmax</strong></a>. For <strong>linear</strong> (<code>w1</code> and <code>w2</code>), it is just the input from the original function multiplied by the previous gradiant output (remember that, we use two linear layers).</p>
+<p>For <strong>ReLU</strong> it is:</p>
 
 <pre><code>                                          f(x) =  0 if x' &lt; 0 
                                                   x if x' &gt;= 0</code></pre>
