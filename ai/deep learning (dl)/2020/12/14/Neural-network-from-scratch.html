@@ -879,7 +879,17 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We use it after the <strong>hidden layer</strong>. Because we only classify It isn't a necessity, but we still get better performance. We implement <strong>ReLU (Rectified linear unit)</strong>, which is most used. <strong>ReLU</strong> is defined as <code>if input &lt; 0 than 0 else input</code> and to implement it is really easy:</p>
+<p>We use it after the <strong>hidden layer</strong>. Because we only classify It isn't a necessity, but we still get better performance. We implement <strong>ReLU (Rectified linear unit)</strong>, which is most used:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>
+$$f(x)=max(0,x)$$
+</p>
 
 </div>
 </div>
@@ -1104,6 +1114,16 @@ Prediction: [[-1.1656513  -0.39488536 -0.83915067 -0.42164934  0.39440176  1.133
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>
+$$ \sigma(z)_i = \frac{e^{z_i}}{\sum_{j=1}^Ke^{z_j}} $$
+</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1298,9 +1318,12 @@ Prediction: [[-1.1656513  -0.39488536 -0.83915067 -0.42164934  0.39440176  1.133
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Logarithm is inverted exponencial:</p>
+<p>
+$$z = x^y$$
 
-<pre><code>z = x**y
-y = logx(z)</code></pre>
+
+$$y = \log{_x}{z}$$
+</p>
 
 </div>
 </div>
@@ -1396,6 +1419,24 @@ Sum:: -25.64731216430664
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>
+$$H_{\textrm{(p, q)}} = - \sum_{x\epsilon{X}}p(x)\log{_q}(x)$$
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>that can be written like this in a code:</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1445,7 +1486,8 @@ Sum:: -25.64731216430664
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">logsumexp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># and from: # http://gregorygundersen.com/blog/2020/02/09/log-sum-exp/</span>
+<span class="k">def</span> <span class="nf">logsumexp</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">c</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
@@ -1640,11 +1682,9 @@ Sum:: -25.64731216430664
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code>slope = (y2 - y1) / (x2 - x1)
-slope = (-5 - 2.5) / (-4 -2)
-slope = -1.25</code></pre>
-
+$${slope = \frac{y2 - y1}{x2 - x1} \\
+slope = \frac{-5 - 2.5}{-4 -2} \\
+slope = -1.25}$$
 </div>
 </div>
 </div>
@@ -1690,12 +1730,10 @@ slope = -1.25</code></pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
-<pre><code> y = 2x
-y' = d/dx * 2x
-y' = d/d * 2
-y' = 2</code></pre>
-
+$${y = 2x \\
+y' = \frac{d}{dx} * 2x \\
+y' = \frac{d}{d} * 2 \\
+y' = 2}$$
 </div>
 </div>
 </div>
@@ -1712,11 +1750,10 @@ y' = 2</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Some derivative need to remember input from the forward pass, and because we start with a <strong>loss (from loss function)</strong>, which is "at the end of the forward pass," we need to compute backward, which we will <strong>compute it as a chain</strong> that put the result of the previous derivative to another (those are called <strong>gradients</strong>).</p>
-<p>If you want to know in detail the derivative of <a href="https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/#derivative-of-the-softmax"><strong>Softmax &amp; NLL</strong></a>. For <strong>linear</strong> (<code>w1</code> and <code>w2</code>), it is just the input from the original function multiplied by the previous gradiant output.</p>
-<p>For <strong>ReLU</strong> it is:</p>
-
-<pre><code>        f(x) =  0 if x' &lt; 0 
-                x if x' &gt;= 0</code></pre>
+<p>If you want to know in detail the derivative of <a href="https://ljvmiranda921.github.io/notebook/2017/08/13/softmax-and-the-negative-log-likelihood/#derivative-of-the-softmax"><strong>Softmax &amp; NLL</strong></a> (keep in mind I'm using <code>logsumexp</code>). For <strong>linear</strong> (<code>w1</code> and <code>w2</code>), it is just the input from the original function multiplied by the previous gradiant output.</p>
+<p>For <strong>ReLU</strong> it is:
+        $$f'(x) = {0 \textrm{ if } {x' &lt; 0}
+                \\ \textrm{x} \textrm{ if } x' &gt;= 0 }$$</p>
 <ul>
 <li>where x is the gradient (output from the previous derivation) and x' is input from w1  </li>
 </ul>
