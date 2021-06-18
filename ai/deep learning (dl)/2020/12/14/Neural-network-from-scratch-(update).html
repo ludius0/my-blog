@@ -1577,7 +1577,7 @@ $$H_{\textrm{(p, q)}} = - \sum_{x\epsilon{X}}p(x)\log{_q}(x)$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When we compare the desired result with the output of our neural network, we then get a loss, which tells us how wrong is our model. We then propagate it (back) to each layer to each neuron (linear function), which is wrapped around the activation function.</p>
+<p>When comparing the desired result with the output of our neural network, we get a loss, which tells us how wrong is our model. We then propagate it (back) to each layer to each neuron (linear function), which is wrapped around the activation function.</p>
 <p>Every function has its derivative. What is derivative? In simple term, it describes a change of slope in each point of a function. Imagine you start a car, and you ride it first 100 meters and then stop. If you would plot its distance over time (it took 10s for 100m) probably you wouldn't get a linear graph, but something like this:</p>
 
 </div>
@@ -1609,7 +1609,7 @@ $$H_{\textrm{(p, q)}} = - \sum_{x\epsilon{X}}p(x)\log{_q}(x)$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You first start slowly as the car is increasing its speed, then you slow down. By watching the change of speed, we can plot its derivative.</p>
+<p>You first start slowly as the car is increasing its speed and then you slow down. By watching the change of speed, we can plot its derivative.</p>
 
 </div>
 </div>
@@ -1876,7 +1876,7 @@ $$slope = \frac{y2 - y1}{x2 - x1}$$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$f'(x) = 0 \textrm{ (if } {x' &lt; 0)} \textrm{ else } \textrm{x} \textrm{ (if } {x' &gt;= 0)} $$<p></p>
+$$\text{f'(x)} = \text{ 0 } \text{ if (x' &lt; 0)} \textrm{ else } \textrm{x} \textrm{ (if } {x' &gt;= 0)} $$<p></p>
 
 </div>
 </div>
@@ -1885,6 +1885,26 @@ $$f'(x) = 0 \textrm{ (if } {x' &lt; 0)} \textrm{ else } \textrm{x} \textrm{ (if 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The missing piece for completion is to know how much we want to push it in the right direction, so for that, we use <strong>learning rate</strong> and <strong>optimizer</strong> (next chapters).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(Quick recap): So when we backpropagate, we always want to find the minimal change of slope (derivative) (in gradient descent) (to minimize the loss; to maximaze accuracy) in the previous layer and then to the previous layer of the previous layer and so on..., until we are back to the input layer.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>Naturally, some neurons will have a bigger impact than others, because their derivative (in gradient descent) gave them a more impactful position.
+</div>
 
 </div>
 </div>
@@ -1945,7 +1965,7 @@ $$f'(x) = 0 \textrm{ (if } {x' &lt; 0)} \textrm{ else } \textrm{x} \textrm{ (if 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
 <div class="flash">
-    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>’@’ operation means matrix multiplication
 </div>
 
@@ -2030,7 +2050,7 @@ $$f'(x) = 0 \textrm{ (if } {x' &lt; 0)} \textrm{ else } \textrm{x} \textrm{ (if 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
 <div class="flash">
-    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
     <strong>Note: </strong>The reasons for the learning rate to be that "<em>small</em>" is that our weights are initiated between -1 to 1.
 </div>
 
